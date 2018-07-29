@@ -71,7 +71,7 @@ class BtorInstaller(SolverInstaller):
         import re
 
         res = self.get_installed_version_script(self.bindings_dir, "btor")
-        print(self.bindings_dir, self.extract_path)
+        print(self.bindings_dir, self.extract_path, res)
         version = None
         if res == "OK":
             vfile = os.path.join(self.extract_path, "CMakeLists.txt")
