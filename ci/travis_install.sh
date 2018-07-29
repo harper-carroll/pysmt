@@ -67,7 +67,6 @@ export BINDINGS_FOLDER=${HOME}/python_bindings/${PYSMT_SOLVER_FOLDER}
 mkdir -p ${BINDINGS_FOLDER}
 python install.py --confirm-agreement --bindings-path ${BINDINGS_FOLDER}
 eval `python install.py --env --bindings-path ${BINDINGS_FOLDER}`
-find ${HOME}/
 
 if [ "${PYSMT_SOLVER}" == "all" ] || [ "${PYSMT_SOLVER}" == *"z3_wrap"* ]; then
     python install.py --z3 --conf --force;
