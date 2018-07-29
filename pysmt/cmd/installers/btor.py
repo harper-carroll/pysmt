@@ -22,9 +22,17 @@ class BtorInstaller(SolverInstaller):
     SOLVER = "btor"
 
     def __init__(self, install_dir, bindings_dir, solver_version,
-                 mirror_link=None):
-        archive_name = "boolector-%s.tar.gz" % solver_version
-        native_link = "https://github.com/Boolector/boolector/archive/%s.tar.gz" % solver_version
+                 mirror_link=None, git_version=None):
+        native_link = "https://github.com/Boolector/boolector/archive/%s.tar.gz"
+        archive_name = "boolector-%s.tar.gz"
+
+        if git_version:
+            native_link = native_link % git_version
+            archive_name = archive_name % git_version
+        else:
+            native_link = native_link % solver_version
+            archive_name = archive_name % solver_version
+
         SolverInstaller.__init__(self, install_dir=install_dir,
                                  bindings_dir=bindings_dir,
                                  solver_version=solver_version,
