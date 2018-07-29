@@ -11,10 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import sys
 import os
 
-from pysmt.cmd.installers.base import SolverInstaller, TemporaryPath
+from pysmt.cmd.installers.base import SolverInstaller
 
 
 class BtorInstaller(SolverInstaller):
@@ -72,6 +71,7 @@ class BtorInstaller(SolverInstaller):
         import re
 
         res = self.get_installed_version_script(self.bindings_dir, "btor")
+        print(self.bindings_dir, self.extract_path)
         version = None
         if res == "OK":
             vfile = os.path.join(self.extract_path, "CMakeLists.txt")
@@ -82,7 +82,9 @@ class BtorInstaller(SolverInstaller):
                 if m is not None:
                     version = m.group(1)
             except OSError:
+                print("File not found")
                 return None
             except IOError:
+                print("IO Error")
                 return None
         return version
