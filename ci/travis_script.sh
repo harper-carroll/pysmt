@@ -42,7 +42,7 @@ export BINDINGS_FOLDER=${HOME}/python_bindings/${PYSMT_SOLVER_FOLDER}
 eval `python install.py --env --bindings-path ${BINDINGS_FOLDER}`
 echo ${PYTHONPATH}
 python install.py --check
-
+python -c "import pyboolector"
 #
 # Run the test suite
 #  * Coverage is enabled only on master / all
