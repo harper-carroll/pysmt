@@ -9,7 +9,7 @@ environment:
       PYSMT_SOLVER: "None"
 
     - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.x"
+      PYTHON_VERSION: "3.7.x"
       PYTHON_ARCH: "64"
       PYSMT_SOLVER: "None"
 
@@ -25,12 +25,12 @@ environment:
       PYSMT_SOLVER: "z3"
 
     - PYTHON: "C:\\Python36"
-      PYTHON_VERSION: "3.6.x"
+      PYTHON_VERSION: "3.7.x"
       PYTHON_ARCH: "32"
       PYSMT_SOLVER: "z3"
 
     - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.x"
+      PYTHON_VERSION: "3.7.x"
       PYTHON_ARCH: "64"
       PYSMT_SOLVER: "z3"
 
@@ -41,7 +41,7 @@ environment:
       PYSMT_SOLVER: "msat"
 
     - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.x"
+      PYTHON_VERSION: "3.7.x"
       PYTHON_ARCH: "64"
       PYSMT_SOLVER: "msat"
 
